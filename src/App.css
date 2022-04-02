@@ -1,38 +1,441 @@
-.App {
-  text-align: center;
-}
+*{
+  margin: 0;
+  border: none;
+  padding: 0;
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@keyframes fade-in{
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
   }
 }
+@keyframes slide-right {
+  from {
+    transform: translateX(-10%);
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+    transform: translateX(0%);
+  }
+}
+html, body, #root, .App {
+  width: 100%;
+  height: 100%;
+}
+.header h1{
+  white-space:pre-line;
+  overflow: hidden;
+  margin-left: 2rem;
+  padding-top: 2rem;
+  font-size: 3.5rem;
+  animation-duration: 800ms;
+  animation-name: fade-in, slide-right;
+  transition: all ease-out;
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+}
+.aqua{
+  background-color: rgb(66, 240, 211);
+}
+.aqua h2{
+  padding: 2rem;
+  padding-right: 4rem;
+  font-size: 1.3rem;
+  white-space:pre-line;
+  line-height: 2rem;
+  letter-spacing: 1px;
+  overflow: hidden;
+}
+.header p{
+  padding: 2rem;
+  padding-bottom: 4rem;
+  font-size: 1rem;
+  font-family:monospace;
+  line-height: 2rem;
+  animation-duration: 800ms;
+  animation-name: fade-in, slide-right;
+}
+.header a,footer a{
+  color: black;
+  text-decoration: none;
+  overflow: hidden;
+  border-bottom: 2px dotted rgba(0, 0, 0, 0.5);
+}
+.header a,footer a:hover{
+  cursor: pointer;
+}
+.img-wrapper{
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+.main-img{
+  background-image: url("https://images.unsplash.com/photo-1592743263126-bb241ee76ac7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bmF0dXJhbCUyMGJhY2tncm91bmR8ZW58MHx8MHx8&w=1000&q=80") ;
+}
+.img-wrapper img{
+  position: absolute;
+  height: 100vh;
+  border: none;
+}
+.bold{
+  font-weight: 500;
+}
+.description p{
+  padding: 2rem;
+  line-height: 1.8rem;
+  font-weight: 100;
+}
+.landscape-img{
+  margin-left: 2rem;
+  width: Calc(100vw - 4rem);
+  padding-bottom: 2rem;
+}
+.features{
+  display: grid;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  gap: 1.5rem;
+}
+.features i{
+  font-size: 1.5rem;
+}
+.features span{
+  font-weight: 100;
+  margin-right: 80px
+}
+.flex-container{
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.description h3{
+  font-size: 1rem;
+  margin-left: 2rem;
+  margin-top: 1rem;
+  letter-spacing: 1px;
+}
+.image-grid{
+  display: grid;
+  width: 90vw;
+  margin: auto;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  padding-bottom: 2rem;
+}
+.grid-image{
+  width: 100%;
+  height: 50vw;
+  object-fit: cover;
+}
+.image-grid .grid-image:nth-child(1){
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+.image-grid .grid-image:nth-child(4){
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+.reverse .grid-image{
+  height: 55vw;
+}
+.reverse .grid-image:nth-child(1){
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+.reverse .grid-image:nth-child(3){
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+.button-wrapper{
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 2rem;
+  padding-top: 0;
+  gap: 1rem;
+}
+.btn{ 
+  border-radius: 5px;
+  width: 100%;
+  padding: 1rem;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+  transition: all 200ms ease-in-out;
+}
+.btn:hover{
+  cursor: pointer;
+}
+.secondary-btn{
+  border: 2px solid rgb(221, 221, 221);
+  background-color: white;
+}
+.secondary-btn:hover{
+  border: 2px solid rgb(66, 240, 211);
+  color: rgb(66, 240, 211);
+}
+.secondary-btn:active{
+  background-color: rgba(66, 240, 211, 0.1);
+}
+.primary-btn{
+  background-color: rgb(66, 240, 211);
+}
+.primary-btn:hover{
+  background-color: rgba(66, 240, 211, 0.6);
+}
+.primary-btn:active{
+  background-color: rgb(66, 240, 211);
+}
+.description form {
+  display: flex;
+  flex-direction: column;
+  padding: 0rem 2rem;
+}
+.description form input, textarea{
+  margin-bottom: 1.5rem;
+  padding: 0.7rem 1rem;
+  border-radius: 5px;
+  border: 2px solid rgb(221, 221, 221);
+  outline: none;
+  width: calc(100% - 2rem);
+}
+.description form input:focus,textarea:focus{
+  border: 2px solid rgb(66, 240, 211);
+}
+.description form textarea{
+  resize: none;
+  min-height: 200px;
+}
+::placeholder{
+  color: rgb(221, 221, 221);
+}
+footer ul{
+  padding: 2rem;
+  list-style-type: none;
+}
+footer li {
+  padding-bottom: 1rem;
+  font-weight: 100;
+}
+footer h4{
+  padding-top: 2rem;
+}
+footer address{
+  font-style:normal;
+}
+footer .flex-container a{
+  border: none;
+  font-size: 1.4rem;
+}
+footer .flex-container{
+  padding-left: 0.5rem;
+  flex-wrap: wrap;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media only screen and (min-width: 481px){
+  .header h1{
+    font-size: 4rem;
   }
-  to {
-    transform: rotate(360deg);
+  .aqua h2{
+    font-size: 1.35rem;
+  }
+  .header p{
+    font-size: 1.05rem;
+  }
+  .description p{
+    font-size: 1.05rem;
+  }
+  .flex-container span{
+    font-size: 1.1rem;
+  }
+  .button-wrapper{
+    flex-direction: row;
+  }
+  .btn{
+    max-width: 200px;
+  }
+  .input-wrapper{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+  }
+}
+@media only screen and (min-width: 739px){
+  .header h1{
+    font-size: 5rem;
+    padding-top: 6rem;
+  }
+  .header .aqua{
+    padding-bottom: 6rem;
+  }
+  .aqua{
+    padding: 3rem 0;
+  }
+  .aqua h2{
+    font-size: 1.48rem;
+    padding-left: 4rem;
+    margin-right: 30%;
+  }
+  .header p{
+    font-size: 1.13rem;
+  }
+  .description p{
+    padding: 4rem;
+    font-size: 1.05rem;
+  }
+  .landscape-img{
+    margin-left: 4rem;
+    width: Calc(100vw - 8rem);
+    padding-bottom: 4rem;
+  }
+  .features{
+    padding-left: 4rem;
+    padding-right: 4rem;
+    gap: 2.5rem;
+    grid-template-columns: 1fr 1fr;
+  }
+  .flex-container span{
+    font-size: 1.1rem;
+  }
+  .description h3{
+    margin-left: 4rem;
+    margin-top: 1rem;
+    margin-bottom: -2rem;
+    font-size: 1.2rem;
+  }
+  .image-grid{
+    width: calc(100vw - 8rem);
+    margin-left: 4rem;
+    margin-top: -1rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    padding-bottom: 4rem;
+  }
+  .button-wrapper{
+    flex-direction: row;
+    padding: 0 0 4rem 4rem;
+    margin-top: -2rem;
+  }
+  .btn{
+    padding: 1.3rem;
+    max-width: 200px;
+  }
+  .description form {
+    padding: 0rem 4rem;
+  }
+  .description form textarea{
+    resize: none;
+    min-height: 300px;
+  }
+  .contact-info h4{
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+  }
+  .contact-info li{
+    font-size: 1.1rem;
+  }
+}
+@media only screen and (min-width: 1153px){
+  @keyframes slide-down {
+    from {
+      transform: translateY(-5%);
+    }
+    to {
+      transform: translateY(0%);
+    }
+  }
+  @keyframes slide-up {
+    from {
+      transform: translateY(0%);
+    }
+    to {
+      transform: translateY(-10%);
+    }
+  }
+  .grid-wrapper{
+    display: grid;
+    width: 100vw;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: repeat(auto-fit, 1fr);
+  }
+  .header h1, .header p{
+    text-align: end;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding-right: 0;
+    animation-duration: 800ms;
+    animation-name: fade-in, slide-up;
+    transition: all ease-out;
+    animation-fill-mode: forwards;
+  }
+  .img-wrapper{
+    max-width: 100%;
+  }
+  .landscape-img{
+    margin: 4rem;
+    max-width: calc(100% - 8rem);
+    margin-top: 0;
+  }
+  .main-img{
+    grid-column-start: 2;
+  }
+  .main-img img {
+    animation-duration: 500ms;
+    animation-name: slide-down;
+    transition: all ease-out;
+  }
+  .aqua h2{
+    text-align: end;
+    padding: 0;
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+  .aqua{
+    padding-top: 4rem;
+  }
+  .flex-container span{
+    margin: 0;
+  }
+  .wide-aqua{
+    background-color: rgb(66, 240, 211);
+  }
+  .wide-aqua h3{
+    text-align: end;
+    padding: 0;
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+  .wide-aqua p{
+    text-align: end;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding-right: 0;
+  }
+  .image-grid{
+    display: grid;
+    width: calc(100% - 8rem);
+    margin: auto;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding-bottom: 6rem;
+  }
+  .grid-image{
+    width: 100%;
+    height: 50vw;
+    object-fit: cover;
+    max-height: 300px;
+  }
+  .button-wrapper{
+    grid-column-start: 2;
+  }
+  .fix-bg{
+    margin-top: -10rem;
+    padding-top: 14rem;
   }
 }
